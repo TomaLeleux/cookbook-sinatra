@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8' />
+    <title><%= @title %></title>
+  </head>
+  <body class='container'>
+    <h1><%= @title %></h1>
+    <form action='create' method='post'>
+      <h2><%= @text %></h2>
+      <input type='text' name='name' value='name' id='name' />
+      <input type='text' name='description' value='description' id='description' />
+      <input type='text' name='prep_time' value='prep_time' id='prep_time' />
+      <select name="difficulty" id='difficulty'>
+        <option value="Very easy">Very easy</option>
+        <option value="Easy">Easy</option>
+        <option value="Moderate">Moderate</option>
+        <option value="Difficult">Difficult</option>
+      </select>
+      <button type='submit' class='btn btn-primary'>Add the recipe!</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8' />
+    <title><%= @title %></title>
+  </head>
+  <body class='container'>
+    <p><%= @title %></p>
+    <%= @text %>
+    <form action='/' method='post'>
+      <ul class='unstyled'>
+        <% @list.each_with_index do |value, i| %>
+          <li>
+            <%= "#{i + 1} - #{value.name} : #{value.description} (#{value.prep_time}min)" %>
+          </li>
+        <% end %>
+      </ul>
+      <button type='submit' class='btn btn-primary'>Return</button>
+    </form>
+  </body>
+</html>
