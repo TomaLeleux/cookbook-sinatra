@@ -1,1 +1,22 @@
-<h1><%= @title %></h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8' />
+    <title><%= @title %></title>
+  </head>
+  <body class='container'>
+    <p><%= @title %></p>
+    <%= @text %>
+    <form action='/destroy' method='post'>
+      <ul class='unstyled'>
+        <% @list.each_with_index do |value, i| %>
+          <li>
+            <input type='radio' name='index' value='<%= i %>' id='vote_<%= i %>' />
+            <%= "#{i + 1} - #{value.name} : #{value.description} (#{value.prep_time}min)" %>
+          </li>
+        <% end %>
+      </ul>
+      <button type='submit' class='btn btn-primary'>Delete the recipe</button>
+    </form>
+  </body>
+</html>
